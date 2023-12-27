@@ -1,0 +1,164 @@
+:root {
+  --color-yellow: #fffbac;
+  --color-orange: #faab78;
+  --clolor-white: #ffffff;
+  --color-black: #000000;
+
+  --font-large: 32px;
+  --font-regular: 24px;
+  --font-small: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  text-align: center;
+  background-color: var(--color-black);
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* game */
+.game {
+  width: 760px;
+  height: 420px;
+  margin: auto;
+  background: center / cover no-repeat url('img/background.png');
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* game header */
+.game__header {
+  width: 100%;
+  flex-basis: 40%;
+  margin: 16px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.game__button {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-yellow);
+  border: solid 3px var(--color-black);
+  border-radius: 8px;
+  font-size: var(--font-regular);
+  transition: transform 150ms ease-in-out;
+}
+.game__button:hover {
+  transform: scale(1.1);
+}
+
+.game__timer {
+  width: 120px;
+  height: 36px;
+  background-color: var(--clolor-white);
+  border: solid 3px var(--color-black);
+  border-radius: 8px;
+  font-size: var(--font-regular);
+  visibility: hidden;
+}
+
+.game__score {
+  width: 52px;
+  height: 52px;
+  background-color: var(--color-orange);
+  border: solid 3px var(--color-black);
+  border-radius: 100%;
+  font-size: var(--font-large);
+  color: var(--clolor-white);
+  visibility: hidden;
+}
+
+/* game field */
+.game__field {
+  width: 100%;
+  flex-basis: 60%;
+}
+
+/* banner */
+.banner {
+  width: 360px;
+  height: 150px;
+  margin: auto;
+  padding: 12px;
+  transform: translateY(-150%);
+  background-color: #00000080;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.banner--hide {
+  display: none;
+}
+
+.banner__replay {
+  width: 52px;
+  height: 52px;
+  background-color: var(--color-yellow);
+  border: solid 3px var(--color-black);
+  border-radius: 100%;
+  font-size: var(--font-regular);
+  transition: transform 150ms ease-in-out;
+}
+.banner__replay:hover {
+  transform: rotate(180deg) scale(1.1);
+}
+
+.banner__title {
+  font-size: var(--font-large);
+  color: var(--clolor-white);
+}
+
+@media screen and (max-width: 768px) {
+  .game {
+    width: 80%;
+  }
+  .game__button {
+    width: 36px;
+    height: 36px;
+    font-size: var(--font-small);
+  }
+  .game__timer {
+    width: 100px;
+    height: 28px;
+    font-size: var(--font-small);
+  }
+  .game__score {
+    width: 42px;
+    height: 42px;
+    font-size: var(--font-regular);
+  }
+
+  .banner {
+    width: 50%;
+    height: 120px;
+  }
+  .banner__replay {
+    width: 42px;
+    height: 42px;
+    font-size: var(--font-small);
+  }
+  .banner__title {
+    font-size: var(--font-regular);
+  }
+}
