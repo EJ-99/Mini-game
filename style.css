@@ -15,6 +15,7 @@
 }
 
 body {
+  margin: 0;
   text-align: center;
   background-color: var(--color-black);
 }
@@ -71,6 +72,7 @@ button {
   border: solid 3px var(--color-black);
   border-radius: 8px;
   font-size: var(--font-regular);
+  font-weight: bold;
   visibility: hidden;
 }
 
@@ -87,8 +89,19 @@ button {
 
 /* game field */
 .game__field {
+  position: relative;
   width: 100%;
   flex-basis: 60%;
+}
+.carrot,
+.bug {
+  position: absolute;
+  cursor: pointer;
+}
+
+.carrot:hover,
+.bug:hover {
+  transform: scale(1.1);
 }
 
 /* banner */
@@ -131,7 +144,8 @@ button {
 
 @media screen and (max-width: 768px) {
   .game {
-    width: 80%;
+    width: 100%;
+    border-radius: 0;
   }
   .game__button {
     width: 36px;
