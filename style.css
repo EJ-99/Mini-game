@@ -16,6 +16,11 @@
 
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   background-color: var(--color-black);
 }
@@ -31,7 +36,7 @@ button {
 .game {
   width: 760px;
   height: 420px;
-  margin: auto;
+  margin: 0;
   background: center / cover no-repeat url('img/background.png');
   border-radius: 16px;
 
@@ -108,7 +113,7 @@ button {
 .banner {
   width: 360px;
   height: 150px;
-  margin: auto;
+  margin: 0;
   padding: 12px;
   transform: translateY(-150%);
   background-color: #00000080;
@@ -118,10 +123,11 @@ button {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  visibility: visible;
 }
 
 .banner--hide {
-  display: none;
+  visibility: hidden;
 }
 
 .banner__replay {
@@ -162,9 +168,15 @@ button {
     height: 42px;
     font-size: var(--font-regular);
   }
+  .carrot {
+    width: 50px;
+  }
+  .bug {
+    width: 30px;
+  }
 
   .banner {
-    width: 50%;
+    width: 70%;
     height: 120px;
   }
   .banner__replay {

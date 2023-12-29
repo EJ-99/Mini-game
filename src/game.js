@@ -1,5 +1,6 @@
 'use strict';
 import { Field, ItemType } from './field.js';
+import * as sound from './sound.js';
 
 export const Reason = Object.freeze({
   stop: 'stop',
@@ -29,6 +30,7 @@ export class Game {
     this.score = 0;
     this.updateScoreBoard();
     this.field.init();
+    sound.playBackground();
   }
   start() {
     this.started = true;
@@ -42,7 +44,12 @@ export class Game {
     this.stopTimer();
     this.field.removeClickListener();
     this.hideGameButton();
-    console.log(reason);
+    this.onGameStop && this.onGameStop(reason);
+    sound.stopBackground();
+  }
+
+  setStopListener(onGameStop) {
+    this.onGameStop = onGameStop;
   }
 
   onButtonClick = () => {
@@ -60,12 +67,14 @@ export class Game {
       if (this.score === this.carrotCount) {
         this.stop(Reason.win);
       }
+      sound.playCarrot();
     } else if (item === ItemType.bug) {
       this.stop(Reason.lose);
     }
   };
 
   showGameButton() {
+    this.gameButton.style.visibility = 'visible';
     const icon = this.gameButton.querySelector('i');
     icon.classList.remove('fa-play');
     icon.classList.add('fa-stop');
