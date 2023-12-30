@@ -111,11 +111,12 @@ button {
 
 /* banner */
 .banner {
+  position: absolute;
   width: 360px;
   height: 150px;
   margin: 0;
   padding: 12px;
-  transform: translateY(-150%);
+  transform: translateY(50%);
   background-color: #00000080;
   border-radius: 16px;
   display: flex;
