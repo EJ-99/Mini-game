@@ -1,10 +1,10 @@
 'use strict';
 
-const alert = new Audio('../sound/alert.wav');
-const bg = new Audio('../sound/bg.mp3');
-const bug = new Audio('../sound/bug_pull.mp3');
-const carrot = new Audio('../sound/carrot_pull.mp3');
-const win = new Audio('../sound/game_win.mp3');
+const alert = new Audio('sound/alert.wav');
+const bg = new Audio('sound/bg.mp3');
+const bug = new Audio('sound/bug_pull.mp3');
+const carrot = new Audio('sound/carrot_pull.mp3');
+const win = new Audio('sound/game_win.mp3');
 
 export function playAlert() {
   play(alert);
