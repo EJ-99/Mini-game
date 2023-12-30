@@ -37,8 +37,8 @@ export class Field {
 
   init() {
     this.field.innerHTML = '';
-    this.addItem('carrot', this.carrotCount, '../img/carrot.png');
-    this.addItem('bug', this.bugCount, '../img/bug.png');
+    this.addItem('carrot', this.carrotCount, 'img/carrot.png');
+    this.addItem('bug', this.bugCount, 'img/bug.png');
     this.addClickListener();
   }
   addItem(className, count, path) {
